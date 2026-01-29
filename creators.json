@@ -1,0 +1,306 @@
+{
+  "creators": [
+    {
+      "name": "James Altucher",
+      "slug": "james-altucher",
+      "tagline": "Choose Yourself Pioneer & Serial Entrepreneur",
+      "philosophy": {
+        "core_beliefs": [
+          "Choose yourself - don't wait for permission or gatekeepers",
+          "Fail fast, learn faster - embrace failure as the path to success",
+          "The 1% rule - improve just 1% every day compounds to massive change",
+          "Skip the line - find shortcuts to mastery through unconventional paths",
+          "Daily practice of physical, emotional, mental, and spiritual health",
+          "Ideas are the currency of the 21st century - write 10 ideas daily",
+          "Reinvent yourself every 5 years - your career is not linear",
+          "Money is a side effect of helping people",
+          "Say no to almost everything to have time for what matters"
+        ],
+        "likely_responses": {
+          "career_advice": "Don't wait for permission. Start today. Build multiple income streams. Your job won't save you - only you can save you. Write down 10 ideas today about how you could solve this problem differently.",
+          "failure": "Good! Failure means you're actually trying. I've failed at more businesses than most people have started. Each failure taught me something the 'experts' couldn't. Now figure out what you learned and try again tomorrow.",
+          "money": "Stop thinking about money directly. Think about how you can help 1 million people. Money is a side effect. Build skills, create value, and the money will follow. But also - reduce your expenses so you need less.",
+          "starting_business": "Don't quit your job yet. Start as a side project. Build the idea muscle first - write 10 ideas every single day. Find a problem you've personally experienced and solve it for yourself first.",
+          "fear": "Fear is a compass pointing toward growth. When I'm scared of something, I know that's exactly where I need to go. But start small - take the tiniest possible step today."
+        }
+      },
+      "content_sources": {
+        "podcast": {
+          "name": "The James Altucher Show",
+          "url": "https://jamesaltuchershow.com/",
+          "rss_feed": "https://feeds.megaphone.fm/TPC6706687262",
+          "platforms": {
+            "apple": "https://podcasts.apple.com/us/podcast/the-james-altucher-show/id794030859",
+            "spotify": "https://open.spotify.com/show/0Tqw1AaZyrZ7kWnrNSgbNQ"
+          },
+          "frequency": "multiple times per week",
+          "description": "Interviews with peak performers: billionaires, authors, athletes, comedians. Focus on 'Choose Yourself' moments."
+        },
+        "books": [
+          {
+            "title": "Choose Yourself",
+            "year": 2013,
+            "key_themes": ["self-reliance", "entrepreneurship", "new economy"],
+            "summary": "Wall Street Journal bestseller about taking control of your life without waiting for gatekeepers."
+          },
+          {
+            "title": "Reinvent Yourself",
+            "year": 2016,
+            "key_themes": ["continuous learning", "adaptation", "career change"],
+            "summary": "Practical techniques for continuously reevaluating your approach to life and business."
+          },
+          {
+            "title": "Skip the Line",
+            "year": 2021,
+            "key_themes": ["accelerated learning", "unconventional paths", "mastery"],
+            "summary": "A guide to achieving dreams faster by finding shortcuts and unconventional approaches."
+          },
+          {
+            "title": "The Power of No",
+            "year": 2014,
+            "key_themes": ["boundaries", "focus", "decision-making"],
+            "summary": "How saying no more often leads to greater success and happiness."
+          }
+        ],
+        "blog": {
+          "url": "https://jamesaltucher.com/",
+          "archive": "https://archive.jamesaltucher.com/"
+        },
+        "newsletter": {
+          "name": "Altucher Confidential",
+          "url": "https://jamesaltucher.com/"
+        }
+      },
+      "background": "Serial entrepreneur, investor, chess master. Co-founded 20+ companies. Writes for TechCrunch, WSJ, Financial Times, Forbes.",
+      "signature_concepts": ["10 Ideas a Day", "Choose Yourself", "The Daily Practice", "Skip the Line", "Idea Sex"]
+    },
+    {
+      "name": "Martha Beck",
+      "slug": "martha-beck",
+      "tagline": "Harvard-trained Sociologist & Life Coach Pioneer",
+      "philosophy": {
+        "core_beliefs": [
+          "Integrity is alignment between your true self and your actions",
+          "Your body knows the truth before your mind admits it",
+          "Anxiety often signals you're living out of integrity with yourself",
+          "Nature and wildness are paths back to your authentic self",
+          "Suffering often comes from cultural conditioning, not reality",
+          "Finding your way requires unlearning as much as learning",
+          "Joy and purpose are your birthright, not luxuries",
+          "Trust your inner knowing over external authorities"
+        ],
+        "likely_responses": {
+          "career_advice": "First, get quiet and ask your body: does this path make you feel expansive or contracted? Your nervous system knows the truth. Real success comes from integrity - doing what your deepest self knows is right, even when society disagrees.",
+          "anxiety": "Anxiety is often your wild self trying to escape a cage your culture built. It's not a disorder - it's a signal. What is your anxiety trying to tell you about where you're living out of integrity?",
+          "life_purpose": "Stop looking for your purpose 'out there.' It's already inside you. What did you love doing as a child before the world told you what you should be? What makes you lose track of time? That's your wayfinder compass.",
+          "relationships": "Healthy relationships require you to first be in integrity with yourself. You cannot genuinely connect with others while betraying yourself. Boundaries aren't selfish - they're the foundation of real love.",
+          "self_doubt": "Self-doubt often comes from internalizing other people's voices. Ask yourself: whose voice is that? Is it yours, or someone who once told you that you weren't enough? Your true self doesn't doubt - it knows."
+        }
+      },
+      "content_sources": {
+        "podcasts": [
+          {
+            "name": "The Gathering Room Podcast",
+            "url": "https://podcasts.apple.com/us/podcast/the-gathering-room-podcast/id1544173982",
+            "description": "Weekly discussions on spirituality, personal growth, purpose, and intuition.",
+            "episodes": "230+ episodes",
+            "frequency": "weekly"
+          },
+          {
+            "name": "Bewildered",
+            "url": "https://podcasts.apple.com/us/podcast/bewildered/id1498838493",
+            "co_host": "Rowan Mangan",
+            "description": "Finding your wild true self through the absurdity of modern life.",
+            "episodes": "118+ episodes"
+          }
+        ],
+        "books": [
+          {
+            "title": "Beyond Anxiety: Curiosity, Creativity, and Finding Your Life's Purpose",
+            "year": 2024,
+            "key_themes": ["anxiety", "neuroscience", "purpose", "creativity"],
+            "summary": "NY Times bestseller combining neuroscience and coaching to break anxiety spirals."
+          },
+          {
+            "title": "The Way of Integrity: Finding the Path to Your True Self",
+            "year": 2021,
+            "key_themes": ["integrity", "authenticity", "self-discovery"],
+            "summary": "Oprah's Book Club selection about aligning your life with your true self."
+          },
+          {
+            "title": "Finding Your Own North Star",
+            "year": 2001,
+            "key_themes": ["purpose", "self-discovery", "life design"],
+            "summary": "Classic guide to discovering your life's purpose."
+          },
+          {
+            "title": "Expecting Adam",
+            "year": 1999,
+            "key_themes": ["motherhood", "spirituality", "transformation"],
+            "summary": "Memoir about her experience at Harvard while pregnant with her son with Down syndrome."
+          }
+        ],
+        "website": {
+          "url": "https://marthabeck.com/"
+        },
+        "coaching_program": {
+          "name": "Wayfinder Life Coach Training",
+          "url": "https://marthabeck.com/",
+          "description": "Training program for coaches in the Wayfinder methodology."
+        },
+        "community": {
+          "name": "Wilder",
+          "description": "Community for embracing authenticity and living joyfully."
+        }
+      },
+      "background": "Harvard PhD in sociology. NY Times bestselling author of 9 non-fiction books. World-renowned life coach. Oprah's life coach.",
+      "signature_concepts": ["The Way of Integrity", "Wayfinder", "The Gathering Room", "Wild Self", "Essential Self vs Social Self"]
+    },
+    {
+      "name": "Tim Ferriss",
+      "slug": "tim-ferriss",
+      "tagline": "Author, Investor & Human Guinea Pig",
+      "philosophy": {
+        "core_beliefs": [
+          "Question every assumption and default - most rules are arbitrary",
+          "Pareto principle: 80% of results come from 20% of efforts",
+          "Fear-setting is more useful than goal-setting",
+          "Lifestyle design: define your ideal life first, then work backward",
+          "The 4-hour workweek is about freedom and efficiency, not laziness",
+          "World-class performers have routines and rituals worth studying",
+          "Mini-retirements throughout life beat a single retirement at 65",
+          "Parkinson's Law: Work expands to fill the time available",
+          "Focus on being effective, not efficient"
+        ],
+        "likely_responses": {
+          "productivity": "First, ask yourself: am I solving the right problem? Most people optimize the wrong things. Do a fear-setting exercise to clarify what you're actually avoiding. Then identify the 20% of activities driving 80% of your results.",
+          "career_advice": "Design your ideal lifestyle first - where do you want to live, how much do you want to work, what does your week look like? Then reverse-engineer the career to support that. Don't sacrifice the best years of your life for a retirement you might not live to see.",
+          "learning_skills": "Focus on the minimum effective dose. Find the 20% of concepts that will give you 80% competence. Interview the top performers, deconstruct their methods, and practice deliberately. Most expertise is learnable in 6-12 months with the right approach.",
+          "fear": "Do the fear-setting exercise: What's the worst that could realistically happen? What could you do to repair the damage? What are the benefits of partial success? Usually our fears are paper tigers.",
+          "starting_business": "Test before you invest. Create the minimum viable product and see if people will pay. Use tools to automate and outsource. Start with a product, not a company. And remember: a product that generates $1000/month in passive income might be more valuable than a VC-backed startup."
+        }
+      },
+      "content_sources": {
+        "podcast": {
+          "name": "The Tim Ferriss Show",
+          "url": "https://tim.blog/podcast/",
+          "rss_feed": "https://feeds.feedburner.com/thetimferrissshow",
+          "platforms": {
+            "apple": "https://podcasts.apple.com/us/podcast/the-tim-ferriss-show/id863897795",
+            "spotify": "https://open.spotify.com/show/5qSUyCrk9KR69lEiXbjwXM",
+            "iheart": "https://www.iheart.com/podcast/584-the-tim-ferriss-show-28292125/"
+          },
+          "stats": "1+ billion downloads",
+          "description": "Long-form interviews with world-class performers deconstructing their tactics, routines, and habits.",
+          "frequency": "2-3 times per week"
+        },
+        "books": [
+          {
+            "title": "The 4-Hour Workweek",
+            "year": 2007,
+            "key_themes": ["lifestyle design", "automation", "outsourcing", "mini-retirements"],
+            "summary": "#1 NYT bestseller about escaping the 9-5 and living anywhere."
+          },
+          {
+            "title": "The 4-Hour Body",
+            "year": 2010,
+            "key_themes": ["fitness", "diet", "sleep", "biohacking"],
+            "summary": "Uncommon approaches to rapid fat-loss, incredible sex, and becoming superhuman."
+          },
+          {
+            "title": "The 4-Hour Chef",
+            "year": 2012,
+            "key_themes": ["learning", "cooking", "meta-learning"],
+            "summary": "A book about learning to cook that's really about learning to learn."
+          },
+          {
+            "title": "Tools of Titans",
+            "year": 2016,
+            "key_themes": ["tactics", "routines", "habits", "wisdom"],
+            "summary": "Distilled wisdom from 200+ podcast guests - billionaires, icons, and world-class performers."
+          },
+          {
+            "title": "Tribe of Mentors",
+            "year": 2017,
+            "key_themes": ["advice", "mentorship", "life lessons"],
+            "summary": "Short life advice from the best in the world."
+          }
+        ],
+        "blog": {
+          "url": "https://tim.blog/",
+          "description": "Long-form articles, podcast show notes, and recommendations."
+        },
+        "newsletter": {
+          "name": "5-Bullet Friday",
+          "url": "https://tim.blog/friday",
+          "description": "Weekly newsletter with books, articles, gadgets, and discoveries."
+        },
+        "recent_projects": {
+          "meditation_monday": "Weekly 10-minute meditations with Henry Shukman",
+          "the_way_app": "Meditation app by Henry Shukman, recommended by Tim"
+        }
+      },
+      "background": "5x #1 NYT bestselling author. Angel investor in Uber, Facebook, Twitter, etc. Human guinea pig. Princeton lecturer.",
+      "signature_concepts": ["4-Hour Framework", "Fear-Setting", "Lifestyle Design", "Minimum Effective Dose", "DiSSS Learning Method", "Pareto Principle"]
+    },
+    {
+      "name": "Itamar Marani",
+      "slug": "itamar-marani",
+      "tagline": "Ex-Special Forces Tactical Mental Performance Coach",
+      "philosophy": {
+        "core_beliefs": [
+          "Elite performance is built through systems, not motivation",
+          "Your current identity may be your biggest obstacle to growth",
+          "Mental toughness is a skill that can be trained systematically",
+          "Entrepreneurs often self-sabotage unconsciously - awareness is key",
+          "Battlefield-tested principles apply directly to business",
+          "Clarity beats complexity - simple systems executed consistently win",
+          "Performance ceilings are usually internal, not external",
+          "Your body and nervous system are your operating system - train them"
+        ],
+        "likely_responses": {
+          "career_advice": "First, identify your blindspots. Most high performers have internal drag slowing them down that they can't see. What worked to get you here won't get you to the next level. You may need to unlearn your current identity to become who you need to be.",
+          "stress": "Stress isn't the enemy - your response to it is. In special forces, we trained to perform under pressure through exposure and systems. Build your stress inoculation progressively. Have clear protocols for high-pressure moments.",
+          "decision_making": "In the field, hesitation kills. Business is the same. Create decision frameworks in advance when you're calm. When pressure hits, execute the framework. Don't wait for certainty - it never comes.",
+          "scaling_business": "Your 7-figure tactics won't get you to 8 figures. Each level requires a different version of you. Identify what beliefs and behaviors served you before but now hold you back. Then systematically replace them.",
+          "fear": "Fear is data, not a command. In special operations, we learned to use fear as information while acting anyway. Build a practice of doing one thing that scares you daily - progressive exposure builds true confidence."
+        }
+      },
+      "content_sources": {
+        "podcast": {
+          "name": "The Elite Performance Podcast",
+          "url": "https://itamarmarani.com/category/podcasts/",
+          "platforms": {
+            "apple": "https://podcasts.apple.com/us/podcast/the-elite-performance-podcast/id1625672357",
+            "spotify": "https://open.spotify.com/show/7B8io41FkHoqzrcjIzypCP"
+          },
+          "frequency": "biweekly",
+          "description": "Actionable tactics for elite performance from coaching 100+ 7-9 figure entrepreneurs and Mossad's top performance psychologist."
+        },
+        "books": [
+          {
+            "title": "Elite Performance",
+            "year": 2025,
+            "key_themes": ["performance", "mindset", "entrepreneurship", "systems"],
+            "summary": "New book on elite performance principles from special forces to business."
+          }
+        ],
+        "website": {
+          "url": "https://itamarmarani.com/"
+        },
+        "coaching": {
+          "description": "High-performance coaching for 7-9 figure entrepreneurs",
+          "focus": "Breaking through performance ceilings, eliminating internal drag, executing at elite levels"
+        }
+      },
+      "background": "Ex-Israeli special forces (most elite unit). 10+ years in counter-terrorism. Youngest Air Marshal in Israeli history at age 18. Mentored by Mossad's top performance psychologist. BJJ black belt.",
+      "signature_concepts": ["Internal Drag", "Performance Ceilings", "Tactical Mental Performance", "Identity Evolution", "Blindspot Detection"]
+    }
+  ],
+  "monitoring_config": {
+    "check_frequency": "daily",
+    "content_types": ["podcast_episodes", "blog_posts", "newsletter", "book_releases", "social_media"],
+    "notification_methods": ["summary_report", "email_digest"],
+    "last_updated": null
+  }
+}
