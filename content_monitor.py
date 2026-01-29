@@ -541,5 +541,96 @@ def main():
     return 0
 
 
+def quick_ask():
+    """Quick command to ask a question from the command line."""
+    import sys
+
+    if len(sys.argv) < 2:
+        print("Usage: ask-creators <question> [--creator NAME]")
+        print("Example: ask-creators 'How do I overcome fear?'")
+        print("Example: ask-creators 'Should I start a business?' --creator Tim")
+        return 1
+
+    # Parse args
+    question_parts = []
+    creator = None
+    i = 1
+    while i < len(sys.argv):
+        if sys.argv[i] == '--creator' and i + 1 < len(sys.argv):
+            creator = sys.argv[i + 1]
+            i += 2
+        else:
+            question_parts.append(sys.argv[i])
+            i += 1
+
+    question = ' '.join(question_parts)
+
+    # Find config
+    config_path = Path(__file__).parent / "creators.json"
+    if not config_path.exists():
+        config_path = Path("creators.json")
+
+    try:
+        monitor = CreatorContentMonitor(str(config_path))
+        monitor.predict_response(question, creator)
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        return 1
+
+    return 0
+
+
+def get_response_data(question: str, creator_name: Optional[str] = None,
+                      config_path: str = "creators.json") -> dict:
+    """
+    Get predicted responses as structured data (for API/programmatic use).
+
+    Args:
+        question: The question to ask
+        creator_name: Optional specific creator to query
+        config_path: Path to creators.json config file
+
+    Returns:
+        dict with 'question', 'category', and 'responses' list
+    """
+    # Find config
+    path = Path(config_path)
+    if not path.exists():
+        path = Path(__file__).parent / config_path
+
+    monitor = CreatorContentMonitor(str(path))
+    category = monitor._categorize_question(question)
+
+    if creator_name:
+        creators_to_check = [monitor.get_creator(creator_name)]
+        if not creators_to_check[0]:
+            return {"error": f"Creator '{creator_name}' not found"}
+    else:
+        creators_to_check = monitor.creators['creators']
+
+    responses = []
+    for creator in creators_to_check:
+        response_data = creator['philosophy'].get('likely_responses', {})
+
+        if category in response_data:
+            response_text = response_data[category]
+        else:
+            response_text = monitor._generate_general_response(creator, question)
+
+        responses.append({
+            "creator": creator['name'],
+            "tagline": creator['tagline'],
+            "response": response_text,
+            "signature_concepts": creator.get('signature_concepts', [])[:3],
+            "core_beliefs": creator['philosophy']['core_beliefs'][:3]
+        })
+
+    return {
+        "question": question,
+        "category": category,
+        "responses": responses
+    }
+
+
 if __name__ == '__main__':
     exit(main())
