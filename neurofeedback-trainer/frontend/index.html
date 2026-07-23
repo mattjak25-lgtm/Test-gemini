@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Neurofeedback Trainer</title>
+<style>
+  body {
+    background: #0f1115;
+    color: #e6e6e6;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  #orb {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #7fd8ff, #1c6faa);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  canvas {
+    background: #1a1d24;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+  #status {
+    margin-top: 1rem;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<h1>Alpha Up-Training</h1>
+<div id="orb"></div>
+<canvas id="chart" width="640" height="200"></canvas>
+<div id="status">Connecting...</div>
+<script>
+const orb = document.getElementById('orb');
+const status = document.getElementById('status');
+const canvas = document.getElementById('chart');
+const ctx = canvas.getContext('2d');
+const history = [];
+const MAX_POINTS = 200;
+
+function connect() {
+  const ws = new WebSocket(`ws://${location.host}/ws`);
+  ws.onopen = () => status.textContent = 'Connected — relax to grow the orb';
+  ws.onclose = () => { status.textContent = 'Disconnected — retrying...'; setTimeout(connect, 1000); };
+  ws.onerror = () => ws.close();
+  ws.onmessage = (event) => render(JSON.parse(event.data));
+}
+
+function render(data) {
+  const scale = 0.6 + data.score * 0.8;
+  orb.style.transform = `scale(${scale})`;
+  orb.style.opacity = 0.5 + data.score * 0.5;
+
+  history.push(data.score);
+  if (history.length > MAX_POINTS) history.shift();
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = '#7fd8ff';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  history.forEach((v, i) => {
+    const x = (i / MAX_POINTS) * canvas.width;
+    const y = canvas.height - v * canvas.height;
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  const bandNames = Object.keys(data.bands);
+  const barWidth = canvas.width / bandNames.length;
+  const maxPower = Math.max(...Object.values(data.bands), 1e-6);
+  bandNames.forEach((band, i) => {
+    const h = (data.bands[band] / maxPower) * 40;
+    ctx.fillStyle = '#3a4150';
+    ctx.fillRect(i * barWidth + 4, canvas.height - h, barWidth - 8, h);
+    ctx.fillStyle = '#9aa4b2';
+    ctx.font = '10px sans-serif';
+    ctx.fillText(band, i * barWidth + 6, canvas.height - 2);
+  });
+}
+
+connect();
+</script>
+</body>
+</html>
