@@ -1,0 +1,87 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  NODE_VERSION: '20.x'
+
+stages:
+  - stage: Test
+    displayName: 'Run Playwright tests'
+    jobs:
+      - job: PlaywrightTests
+        displayName: 'Install, run tests, capture video'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: $(NODE_VERSION)
+            displayName: 'Use Node.js'
+
+          - script: npm ci
+            displayName: 'Install dependencies'
+
+          - script: npx playwright install --with-deps chromium
+            displayName: 'Install Playwright browsers'
+
+          - script: npx playwright test
+            displayName: 'Run Playwright test suite'
+            env:
+              CI: 'true'
+
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: 'test-results/junit-results.xml'
+              testRunTitle: 'Playwright - $(Build.BuildNumber)'
+            displayName: 'Publish test results to Azure DevOps'
+
+          - task: PublishPipelineArtifact@1
+            condition: succeededOrFailed()
+            inputs:
+              targetPath: 'test-results'
+              artifactName: 'playwright-videos-$(Build.BuildNumber)'
+            displayName: 'Publish test videos as pipeline artifact'
+
+          - task: PublishPipelineArtifact@1
+            condition: succeededOrFailed()
+            inputs:
+              targetPath: 'playwright-report'
+              artifactName: 'playwright-html-report-$(Build.BuildNumber)'
+            displayName: 'Publish HTML report'
+
+  # Separate stage so a SharePoint outage/credential issue never blocks the
+  # test-result signal above — QA sign-off and training-content publishing
+  # are two different concerns with two different failure tolerances.
+  - stage: PublishToSharePoint
+    displayName: 'Publish recordings to SharePoint'
+    dependsOn: Test
+    condition: succeeded()
+    jobs:
+      - job: UploadToSharePoint
+        displayName: 'Upload recordings via Microsoft Graph'
+        steps:
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              artifact: 'playwright-videos-$(Build.BuildNumber)'
+              path: '$(Pipeline.Workspace)/videos'
+            displayName: 'Download recorded videos'
+
+          # SP_TENANT_ID / SP_CLIENT_ID / SP_CLIENT_SECRET / SP_SITE_ID / SP_DRIVE_ID
+          # come from a secret variable group (Library > Variable groups), never
+          # committed here. The service principal needs Sites.ReadWrite.All (or a
+          # scoped equivalent) on the target SharePoint site.
+          - script: |
+              chmod +x scripts/publish-to-sharepoint.sh
+              scripts/publish-to-sharepoint.sh "$(Pipeline.Workspace)/videos" "$(Build.SourceBranchName)" "$(Build.BuildNumber)"
+            displayName: 'Upload videos to SharePoint via Graph API'
+            env:
+              SP_TENANT_ID: $(spTenantId)
+              SP_CLIENT_ID: $(spClientId)
+              SP_CLIENT_SECRET: $(spClientSecret)
+              SP_SITE_ID: $(spSiteId)
+              SP_DRIVE_ID: $(spDriveId)

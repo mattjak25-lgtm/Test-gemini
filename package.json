@@ -1,0 +1,16 @@
+{
+  "name": "playwright-devops-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app/server.js",
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0"
+  }
+}

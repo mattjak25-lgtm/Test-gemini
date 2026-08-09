@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Broker Portal — Sign in</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 360px; margin: 80px auto; }
+    label { display: block; margin-top: 12px; font-size: 14px; }
+    input { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; }
+    button { margin-top: 20px; width: 100%; padding: 10px; cursor: pointer; }
+    #login-error { color: #b00020; margin-top: 12px; display: none; }
+  </style>
+</head>
+<body>
+  <h1>Broker Portal</h1>
+  <form id="login-form">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" autocomplete="username" />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" />
+
+    <button id="login-btn" type="submit">Sign in</button>
+    <p id="login-error">Enter a username and password to continue.</p>
+  </form>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const error = document.getElementById('login-error');
+
+      if (!username || !password) {
+        error.style.display = 'block';
+        return;
+      }
+
+      error.style.display = 'none';
+      localStorage.setItem('brokerPortalUser', username);
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
